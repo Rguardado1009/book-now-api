@@ -23,4 +23,3 @@ Things you may want to cover:
 
 * ...
 # book-now-api
-# book-now-api
