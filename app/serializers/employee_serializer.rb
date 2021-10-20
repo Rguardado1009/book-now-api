@@ -2,6 +2,7 @@ class EmployeeSerializer < ActiveModel::Serializer
   attributes :id, :name, :description
   has_many :appointments
   has_many :services, through: :employee_services 
+  has_many :services
   has_many :users
   has_many :users, through: :appointments
   has_many :reviews, through: :services

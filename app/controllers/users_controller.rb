@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-    skip_before_action :confirm_authentication
+  skip_before_action :confirm_authentication, only: [:current, :create]
   
     
   
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       User.find(params[:id])
   end
     def user_params
-        params.permit(:username, :password, :name, :email)
+        params.permit(:user_id, :username, :password, :name, :email)
     end
     def render_not_found_response
       render json: {error: "User not found"}, status: :not_found

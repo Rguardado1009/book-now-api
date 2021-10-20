@@ -17,7 +17,7 @@ U1 = User.create(  name: "Ronald Guardado",
         name: Faker::Name.unique.name, 
         username: Faker::Internet.username, 
         email: Faker::Internet.free_email, 
-        password: Faker::Superhero.power
+        password: "admin"
     )
 end
 puts 'done seeding users'

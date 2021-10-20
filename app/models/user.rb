@@ -4,4 +4,6 @@ class User < ApplicationRecord
     has_many :services, through: :appointments
     has_many :employees, through: :services
     validates :username, presence: true, uniqueness: true
+    validates :password, presence: true
+
 end

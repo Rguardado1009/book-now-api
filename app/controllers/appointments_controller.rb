@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-    skip_before_action :confirm_authentication
+    skip_before_action :confirm_authentication 
 
     def index
         render json: Appointment.all, each_serializer: AppointmentSerializer
@@ -36,7 +36,7 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.permit(:user_id, :employee_id, :start_time, :end_time, :date, :service_id )
+        params.permit(:user_id, :employee_id, :start_time, :end_time, :date, :service_id, :appointment )
     end
 
     def render_not_found_response
