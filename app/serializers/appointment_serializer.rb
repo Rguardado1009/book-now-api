@@ -3,4 +3,5 @@ class AppointmentSerializer < ActiveModel::Serializer
   has_one :service
   has_one :user
   has_one :employee
+  
 end

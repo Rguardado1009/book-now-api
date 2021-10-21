@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
 
     def update
         appointment = find_appointment
-        appointment.update!(appointment_params)
+        appointment.update!(appointment_update_params)
         render json: appointment, status: :ok
     end
 
@@ -37,6 +37,9 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
         params.permit(:user_id, :employee_id, :start_time, :end_time, :date, :service_id, :appointment )
+    end
+    def appointment_update_params
+        params.permit( :employee_id, :start_time, :end_time, :date, :service_id, :appointment )
     end
 
     def render_not_found_response
