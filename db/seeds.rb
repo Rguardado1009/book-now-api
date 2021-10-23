@@ -76,7 +76,8 @@ puts 'done seeding services'
 
 puts 'seeding appointments'
 
-15.times do
+
+10.times do
     start_time = Faker::Time.between_dates(from: Date.today - 400, to: Date.today, period: :all, format: :default)
     end_time =  Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all, format: :default) 
     Appointment.create(

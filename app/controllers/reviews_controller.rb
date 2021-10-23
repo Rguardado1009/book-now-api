@@ -1,19 +1,19 @@
 class ReviewsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-    skip_before_action :confirm_authentication
+    skip_before_action :confirm_authentication 
 
     def index
-        render json: Reviews.all, each_serializer: ReviewsSerializer
+        render json: Review.all, each_serializer: ReviewSerializer
     end
 
     def show
         reviews = find_reviews
-        render json: reviews, serializer: ReviewsSerializer
+        render json: reviews, serializer: ReviewSerializer
     end
 
     def create
-        reviews = Reviews.create!(reviews_params)
+        reviews = Review.create!(reviews_params)
         render json: reviews, status: :created
     end
 
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
     private
 
     def find_reviews
-        Reviews.find(params[:id])
+        Review.find(params[:id])
     end
 
     def reviews_params

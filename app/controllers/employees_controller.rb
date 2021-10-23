@@ -8,10 +8,8 @@ class EmployeesController < ApplicationController
     end
 
     def show
-        
-            employee = find_employee
-            render json: employee, serializer: EmployeeSerializer
-    
+        employee = find_employee
+        render json: employee, serializer: EmployeeSerializer
     end
 
 

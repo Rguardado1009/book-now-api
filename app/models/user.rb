@@ -5,5 +5,5 @@ class User < ApplicationRecord
     has_many :employees, through: :services
     validates :username, presence: true, uniqueness: true
     validates :password, presence: true
-
+    has_many :reviews
 end

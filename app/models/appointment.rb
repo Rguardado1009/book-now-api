@@ -5,8 +5,12 @@ class Appointment < ApplicationRecord
 
   validates :date, presence: true
   validate :appointment_date_cannot_be_in_the_past
+  
   validates :start_time, :end_time, presence: true
   validate  :start_time_and_end_time
+
+  validates :start_time, :end_time, uniqueness: { 
+    scope: [:start_time, :end_time], :Message => 'Time Slot Already booked'}
 
   private
   def start_time_and_end_time
