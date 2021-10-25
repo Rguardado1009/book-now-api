@@ -9,7 +9,7 @@ puts 'seeding users'
 
 U1 = User.create(  name: "Ronald Guardado", 
     username:  "rguardado",
-    email:  "rguardado@gmail.com",
+    email:  "rguardado109@gmail.com",
     password: "admin")
 
 10.times do
@@ -40,6 +40,7 @@ s1 = Service.create(
     Contact us to set up a time for your Recording session today! The world of sound is at your fingertips.", 
     hourly_rate: 55, 
     duration: 2,
+    Image:"https://res.cloudinary.com/airlines/image/upload/v1635131933/Final%20Project%20Assets/TreeHouseRevamp_00069_hoetnw.jpg"
 )
 s2 = Service.create(
     name: "PREMIUM RECORDING SESSION", 
@@ -47,6 +48,7 @@ s2 = Service.create(
     Treehouse Studio. Includes Recording Session as well as In session Mixing", 
     hourly_rate: 70, 
     duration: 2,
+    Image:"https://res.cloudinary.com/airlines/image/upload/v1635131929/Final%20Project%20Assets/Pic_8_ctkkyu.jpg"
 )
 s3 = Service.create(
     name: "MIXING", 
@@ -56,12 +58,14 @@ s3 = Service.create(
     Contact us to start Mixing today.", 
     hourly_rate: 300, 
     duration: 2,
+    Image:"https://res.cloudinary.com/airlines/image/upload/v1635131935/Final%20Project%20Assets/TreeHouseRevamp_00113_uraulj.jpg"
 )
 s4 = Service.create(
     name: "LIVE SOUND MIXING", 
     description: "Book our experienced Sound Engineers to bring your next live show to life", 
     hourly_rate: 300, 
     duration: 2,
+    Image:"https://res.cloudinary.com/airlines/image/upload/v1635133397/Final%20Project%20Assets/BannerPic-Mon-2019-LD-2_1400x1050_ubbj0h.jpg"
 )
 s5 = Service.create(
     name: "MASTERING", 
@@ -70,25 +74,26 @@ s5 = Service.create(
     Contact us to find out more about our Mastering rates and availabilities. Don’t wait too long, our calendar fills up fast.", 
     hourly_rate: 75, 
     duration: 2,
+    Image:"https://res.cloudinary.com/airlines/image/upload/v1635133631/Final%20Project%20Assets/Audio-Mastering-Equipment-326x217_2x_rphust.jpg"
 )
 puts 'done seeding services'
 
 
-puts 'seeding appointments'
+# puts 'seeding appointments'
 
 
-10.times do
-    start_time = Faker::Time.between_dates(from: Date.today - 400, to: Date.today, period: :all, format: :default)
-    end_time =  Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all, format: :default) 
-    Appointment.create(
-    start_time: start_time, 
-    end_time: end_time,
-    date: Faker::Date.between(from: '2021-08-01', to: '2021-11-29'), 
-    user_id: rand(1..10), 
-    service_id: rand(1..5), 
-    employee_id: rand(1..5))
-    end
-puts 'done seeding appointments'
+# 10.times do
+#     start_time = Faker::Time.between_dates(from: Date.today - 400, to: Date.today, period: :all, format: :default)
+#     end_time =  Faker::Time.between_dates(from: Date.today - 600, to: Date.today, period: :all, format: :default) 
+#     Appointment.create(
+#     start_time: start_time, 
+#     end_time: end_time,
+#     date: Faker::Date.between(from: '2021-08-01', to: '2021-11-29'), 
+#     user_id: rand(1..10), 
+#     service_id: rand(1..5), 
+#     employee_id: rand(1..5))
+#     end
+# puts 'done seeding appointments'
 
 puts 'seeding reviews'
 15.times do

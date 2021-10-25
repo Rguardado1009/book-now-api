@@ -14,11 +14,13 @@ class AppointmentsController < ApplicationController
 
     def create
         appointment = Appointment.create!(appointment_params)
+        # AppointmentMailer.with(user: user, appointment: @appointment).appointment_created.deliver_later
+        # redirect_to @appointment_created, notice: "Appointment created"
         render json: appointment, status: :created
     end
 
     def update
-        appointment = find_appointment
+        @appointment = find_appointment
         appointment.update!(appointment_update_params)
         render json: appointment, status: :ok
     end
