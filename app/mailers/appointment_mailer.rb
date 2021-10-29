@@ -6,10 +6,9 @@ class AppointmentMailer < ApplicationMailer
   #   en.appointment_mailer.appointment_created.subject
   #
   def appointment_created
-    # @user= params[:user]
- 
-    @greeting = "Hi"
-
-    mail to: "rguardado1009@gmail.com", subject: "Your appointment was successfully created"
+    @appointment = appointment
+    mail(to:@user.email, subject: 'Your Appointment was created')
   end
+
+  
 end

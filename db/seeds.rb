@@ -23,12 +23,66 @@ end
 puts 'done seeding users'
 
 puts 'seeding employees'
-5.times do
-    Employee.create(
-        name: Faker::Superhero.name, 
-        description: Faker::Hipster.sentences(number: 1)
+E1 =  Employee.create(
+        name: 'Bob Clearmountain', 
+        description:"Bob Clearmountain is one of the most acclaimed mixers in the contemporary pop world. Interested in electronics from the time he was young, he took an interest in the recording process after his band recorded their demo at Media Sound Studio in New York. He is known for revolutionizing the industry and popularizing the notion of a mixing engineer being called on to salvage projects, or offer distinctive improvements. He is also famous for being the first mixing engineer to negotiate a royalty for his work. Despite taking advantage of advancements in digital technology, Bob still relies on his analog mixing deck, treating his Pro Tools software like a tape machine. The list of artists he has worked with is exhaustive, and reads like a who’s who of the industry. In addition, he has influenced an entire generation of mix engineers.",
+        Knownfor:'
+        - Bruce Springsteen
+        - David Bowie
+        - The Rolling Stones
+        - Tina Turner
+        - Hall & Oats',
+        images: 'https://res.cloudinary.com/airlines/image/upload/v1635358598/Final%20Project%20Assets/Bob_Clearmountain_pfgsta.png'
     )
-end
+E2 =  Employee.create(
+        name: 'Chris Lord-Alge', 
+        description:" Chris Lord-Alge is an American mixing engineer who has 5 Grammys under his belt. His career took off while working for Unique Recording studios in the 1980s. There he performed mixing duties on such classics as the Rocky IV soundtrack, James Brown’s album Gravity (including his famous his “Living In America”), as well as artists such as Chaka Khan, Carly Simon, Tina Turner and the Rolling Stones.
+         He is known for his abundant use of compression to control audio dynamics, giving songs a punchy and aggressive sound. This sound is why his work is in such high demand. While compression techniques have always existed as a functional tool, he is is known for pushing the boundaries and using it as a more creative enhancement. His signature style has become so well known that in 2010, Waves Audio released a series of audio plug ins based on his effects chains.",
+        Knownfor:'
+        - Foo Fighter
+        - Green Day
+        - Nine Inch Nails
+        - U2
+        - Bon Jovi',
+        images: 'https://res.cloudinary.com/airlines/image/upload/c_scale,h_720,w_1280/v1635358596/Final%20Project%20Assets/Chris_Lord-Alge_dwugqx.jpg'
+        )
+
+E3 =  Employee.create(
+    name: 'Tony Maserati', 
+    description:" Tony Maserati is widely known in the industry for being partly responsible for the distinctive New York hip-hop and R&B sound. He worked at Sigma Sound Studios in New York at the beginning of his mixing career, before going fully independent in 1989. Over the course of his career he has been nominated for 10 Grammys, as well as winning one for working on Sérgio Mendes’s Timeless in 2006. He originally majored in composition at Berklee School of Music in the early 1980s, but switched his major to Music Production and Engineering in 1983 when it was first offered. Songs he has worked on have earned sales over the $100 million mark in total, and the list of artists who have worked with him goes on and on. 
+    While originally working on analog gear, he has since developed a hybrid analog-digital approach to use the best of both worlds. His signature sound is so in demand that computer plug-in developer Waves issues the “Tony Maserati Collection” processing bundle.",
+    Knownfor:'
+    -- Beyonce
+    - Mary J Blige
+    - Puff Daddy
+    - Queen Latifah
+    - Notorious B.I.G.',
+    images: 'https://res.cloudinary.com/airlines/image/upload/v1635358597/Final%20Project%20Assets/Tony_Maserati_bdwy3p.png'
+    )
+E4 =  Employee.create(
+    name: 'Dave Pensado', 
+    description:"Having worked as a studio engineer in Atlanta in the 1970s and 1980s, he has been working out of LA since 1990, mixing between 200 to 250 songs a year for a wide variety of artists. He even hosts his own show about studio engineering techniques called “Pensado’s Place” where he interviews other mixers, artists and producers. He is known for mixes primarily “in the box,” which means he prefers to process audio within his computer instead of using a vast amount of analog outboard equipment.",
+    Knownfor:'
+    -- Mary J Blige
+    - Destiny’s Child
+    - Justin Timberlake
+    - Christina Aguilera
+    - Ice Cube',
+    images: 'https://res.cloudinary.com/airlines/image/upload/c_scale,h_720,w_1280/v1635358599/Final%20Project%20Assets/Dave_Pensado_iy73j5.png'
+    )
+E5 =  Employee.create(
+        name: 'Tom Lord-Alge', 
+        description:" Tom Lord-Alge is the younger brother of Chris Lord-Alge, and began his career by working as Chris’s assistant at Unique Recording in NYC. His first high level audio engineering job was engineering Steve Winwood’s album Back To the High Life in 1986, earning him a Grammy award. While originally an engineer and then producer, he began to realize that mixing was where his heart was. Like his older brother Chris, he is known for extensive use of compression techniques, as well as mixing with analog gear.
+         He is also known for his extensive collection of outboard compressors which impart their own signature sounds to whatever track they’re applied to, or the overall mix as a whole.",
+        Knownfor:'
+        - Marilyn Manson
+        - U2
+        - Peter Gabriel
+        - The Rolling Stones
+        - Oasis',
+        images: 'https://res.cloudinary.com/airlines/image/upload/c_fit,e_auto_color,h_720,w_1280/v1635358595/Final%20Project%20Assets/Tom_Lord-Alge_faxhkg.jpg'
+        )
+
 puts 'done seeding employees'
 
 puts 'seeding services'
@@ -45,7 +99,7 @@ s1 = Service.create(
 s2 = Service.create(
     name: "PREMIUM RECORDING SESSION", 
     description: "Create and capture your next sounds with experienced professionals and the latest recording technologies at 
-    Treehouse Studio. Includes Recording Session as well as In session Mixing", 
+    Treehouse Studio. Includes Recording Session as well as in session Mixing", 
     hourly_rate: 70, 
     duration: 2,
     Image:"https://res.cloudinary.com/airlines/image/upload/v1635131929/Final%20Project%20Assets/Pic_8_ctkkyu.jpg"

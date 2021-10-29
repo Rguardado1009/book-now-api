@@ -14,7 +14,8 @@ class AppointmentsController < ApplicationController
 
     def create
         appointment = Appointment.create!(appointment_params)
-        # AppointmentMailer.with(user: user, appointment: @appointment).appointment_created.deliver_later
+       
+        # AppointmentMailer.with(user: user, appointment: @appointment).appointment_created.deliver
         # redirect_to @appointment_created, notice: "Appointment created"
         render json: appointment, status: :created
     end
